@@ -1,4 +1,4 @@
-package com.example.configuration.check.checkProperty.config;
+package com.example.configuration.check.property.config;
 
 import java.util.ArrayList;
 import java.util.List;

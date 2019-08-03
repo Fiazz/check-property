@@ -1,7 +1,8 @@
-package com.example.configuration.check.checkProperty.bo;
+package com.example.configuration.check.property.bo;
 
 import org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,13 +15,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.util.Assert;
 
-import com.example.configuration.check.checkProperty.config.AppProperties;
-import com.example.configuration.check.checkProperty.config.PropTestConfig;
-import com.example.configuration.check.checkProperty.config.ServerProperties;
+import com.example.configuration.check.property.config.AppProperties;
+import com.example.configuration.check.property.config.PropTestConfig;
+import com.example.configuration.check.property.config.ServerProperties;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = { PropTestConfig.class }, initializers = ConfigFileApplicationContextInitializer.class)
 public class PrintBOTest {
+
+	private static final Logger LOGGER = Logger.getLogger(PrintBOTest.class);
 
 	@Autowired
 	AppProperties appProperties;
@@ -44,8 +47,8 @@ public class PrintBOTest {
 		Assert.notNull(appProperties, "AppProperties did not load");
 		Assert.notNull(serverProperties, "ServerProperties did not load");
 		Assert.isTrue(serverProperties.getServerList().size() == 2, "ServerProperties did not load");
-		System.out.println(ToStringBuilder.reflectionToString(appProperties, new MultilineRecursiveToStringStyle()));
-		System.out.println(ToStringBuilder.reflectionToString(serverProperties, new MultilineRecursiveToStringStyle()));
+		LOGGER.info(ToStringBuilder.reflectionToString(appProperties, new MultilineRecursiveToStringStyle()));
+		LOGGER.info(ToStringBuilder.reflectionToString(serverProperties, new MultilineRecursiveToStringStyle()));
 	}
 
 	@Test

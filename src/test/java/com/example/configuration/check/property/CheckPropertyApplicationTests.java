@@ -1,4 +1,4 @@
-package com.example.configuration.check.checkProperty;
+package com.example.configuration.check.property;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

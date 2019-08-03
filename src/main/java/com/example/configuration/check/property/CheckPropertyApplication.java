@@ -1,4 +1,4 @@
-package com.example.configuration.check.checkProperty;
+package com.example.configuration.check.property;
 
 import javax.annotation.PostConstruct;
 
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.configuration.check.checkProperty.bo.PrintBO;
+import com.example.configuration.check.property.bo.PrintBO;
 
 @SpringBootApplication
 public class CheckPropertyApplication {
