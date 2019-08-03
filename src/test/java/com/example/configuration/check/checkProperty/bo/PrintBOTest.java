@@ -20,7 +20,7 @@ public class PrintBOTest {
 
 	@Autowired
 	AppProperties appProperties;
-	
+
 	@Autowired
 	ServerProperties serverProperties;
 
@@ -28,6 +28,7 @@ public class PrintBOTest {
 	public void print() {
 		Assert.notNull(appProperties, "AppProperties did not load");
 		Assert.notNull(serverProperties, "ServerProperties did not load");
+		Assert.isTrue(serverProperties.getServerList().size() == 2, "ServerProperties did not load");
 		System.out.println(ToStringBuilder.reflectionToString(appProperties, new MultilineRecursiveToStringStyle()));
 		System.out.println(ToStringBuilder.reflectionToString(serverProperties, new MultilineRecursiveToStringStyle()));
 
