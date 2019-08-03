@@ -16,26 +16,26 @@ import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.util.Assert;
 
 import com.example.configuration.check.property.config.AppProperties;
-import com.example.configuration.check.property.config.PropTestConfig;
+import com.example.configuration.check.property.config.CheckPropertyTestConfiguration;
 import com.example.configuration.check.property.config.ServerProperties;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = { PropTestConfig.class }, initializers = ConfigFileApplicationContextInitializer.class)
+@ContextConfiguration(classes = { CheckPropertyTestConfiguration.class }, initializers = ConfigFileApplicationContextInitializer.class)
 public class PrintBOTest {
 
 	private static final Logger LOGGER = Logger.getLogger(PrintBOTest.class);
 
 	@Autowired
-	AppProperties appProperties;
+	private AppProperties appProperties;
 
 	@Autowired
-	ServerProperties serverProperties;
+	private ServerProperties serverProperties;
 
 	@Autowired
-	PrintBO printBO;
+	private PrintBO printBO;
 
 	@InjectMocks
-	PrintBO printBOInject;
+	private PrintBO printBOInject;
 
 	@Before
 	public void setup() {

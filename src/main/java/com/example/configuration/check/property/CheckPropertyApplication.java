@@ -12,7 +12,7 @@ import com.example.configuration.check.property.bo.PrintBO;
 public class CheckPropertyApplication {
 
 	@Autowired
-	PrintBO bo;
+	private PrintBO bo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CheckPropertyApplication.class, args);

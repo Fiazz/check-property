@@ -11,13 +11,13 @@ import com.example.configuration.check.property.config.ServerProperties;
 
 @EnableAutoConfiguration
 @EnableConfigurationProperties(value = { AppProperties.class, ServerProperties.class })
-public class PropTestConfig {
+public class CheckPropertyTestConfiguration {
 	
 	@Autowired
-	AppProperties appProperties;
+	private AppProperties appProperties;
 
 	@Autowired
-	ServerProperties serverProperties;
+	private ServerProperties serverProperties;
 	
 	@Bean
 	public PrintBO printBO(){
@@ -26,6 +26,4 @@ public class PropTestConfig {
 		printBO.setServerProperties(serverProperties);
 		return printBO;
 	}
-	
-
 }

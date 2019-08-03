@@ -12,5 +12,4 @@ public class CheckPropertyApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }
