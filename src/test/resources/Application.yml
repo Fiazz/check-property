@@ -1,0 +1,13 @@
+servers:
+  serverList:
+  - ipAddress: address1
+    host: proxy1
+    port: port1
+  - ipAddress: address2
+    host: proxy2
+    port: port2
+    
+app:
+  proxy:
+    secured: true
+    url: url1
