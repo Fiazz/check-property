@@ -24,5 +24,6 @@ repositories {
 dependencies {
 	compile 'org.springframework.boot:spring-boot-starter'
 	compile 'org.apache.commons:commons-lang3:3.9'
+	compileOnly 'org.projectlombok:lombok:1.18.8'
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
 }

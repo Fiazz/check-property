@@ -8,7 +8,10 @@ import org.springframework.stereotype.Component;
 import com.example.configuration.check.checkProperty.config.AppProperties;
 import com.example.configuration.check.checkProperty.config.ServerProperties;
 
+import lombok.Data;
+
 @Component
+@Data
 public class PrintBO {
 
 	@Autowired
@@ -20,7 +23,5 @@ public class PrintBO {
 	public void print() {
 		System.out.println(ToStringBuilder.reflectionToString(appProperties, new MultilineRecursiveToStringStyle()));
 		System.out.println(ToStringBuilder.reflectionToString(serverProperties, new MultilineRecursiveToStringStyle()));
-
 	}
-
 }
